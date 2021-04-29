@@ -1,0 +1,11 @@
+mixin link(props)
+  if (props.isLink)
+    a.link(class!= props.mod ? `link--${props.mod}` : "", class!= props.cssClass, href="#")&attributes(attributes)
+      span!= props.text
+      if props.icon
+        +icon(props.icon.name, props.icon && props.icon.width ? props.icon.width : 16, props.icon && props.icon.height ? props.icon.height : 16)
+  else
+    button.link(class!= props.mod ? `link--${props.mod}` : "", class!= props.cssClass, type!= props.type ? props.type : "button")&attributes(attributes)
+      span!= props.text
+      if props.icon
+        +icon(props.icon.name, props.icon && props.icon.width ? props.icon.width : 16, props.icon && props.icon.height ? props.icon.height : 16)

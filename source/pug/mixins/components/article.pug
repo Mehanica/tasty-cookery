@@ -1,0 +1,25 @@
+mixin article(props)
+  article.article(class!=props.mod ? `article--${props.mod}` : "", class!= props.cssClass)&attributes(attributes)
+    a.article__link(href="#")
+      .article__image
+        +img("content", props.image.name, props.image.format, 624, 540, props.image.alt)
+        if props.icon
+          b.article__mark
+            +icon(props.icon.name, props.icon.width, props.icon.height)
+        if props.tag
+          b.tag.tag--static!= props.tag
+      .article__description
+        h3.article__title
+          span!= props.title
+        p.article__text!= props.text
+        p.article__info
+          if props.commentsAmount
+            span.article__info-item
+              +icon("icon-comment", 16, 16)
+              span!= props.commentsAmount
+          if props.viewsAmount
+            span.article__info-item
+              +icon("icon-eye", 16, 16)
+              span!= props.viewsAmount
+          if props.date
+            span.article__info-item.article__date!= props.date

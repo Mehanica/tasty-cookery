@@ -1,0 +1,26 @@
+mixin pagination(props)
+  .pagination(class!= props.cssClass)&attributes(attributes)
+    .pagination__body
+      if (props.activeIndex > 2)
+        a.pagination__button.pagination__button--back-fast(href="#", aria-label="Первая страница")
+          +icon("icon-chevron-double-left", 24, 24)
+      if (props.activeIndex > 1)
+        a.pagination__button.pagination__button--back(href="#", aria-label="Назад на 10 страниц")
+          +icon("icon-chevron-left", 24, 24)
+      ul.pagination__list
+        each item, index in props.data
+          li.pagination__item
+            a.pagination__button.pagination__item-link(class=(index + 1 == props.activeIndex) ? "active" : "", href="#")= item
+
+      if (props.activeIndex < props.data.length)
+        a.pagination__button.pagination__button--next(href="#", aria-label="Следующая страница")
+          +icon("icon-chevron-right", 24, 24)
+      if (props.activeIndex < props.data.length - 1)
+        a.pagination__button.pagination__button--next-fast(href="#", aria-label="Вперёд на 10 страниц")
+          +icon("icon-chevron-double-right", 24, 24)
+    button.button.button--xs.pagination__more(type="button")
+      span.button__text
+        span.button__extra-text Показать
+        |
+        |
+        span.button__main-text Eще 24

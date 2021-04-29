@@ -1,0 +1,14 @@
+mixin dropdown(props = {})
+  .dropdown(class!= props.active ? "active" : "", class!= props.cssClass)&attributes(attributes)
+    button.dropdown__button(type="button")
+      span!= props.text
+      span.dropdown__icon
+        +icon("icon-chevron-down", 24, 24)
+    .dropdown__content
+      if props.list
+        ul.dropdown__list
+          each item in props.list
+            li.dropdown__item(class!= item.active ? "active" : "")
+              button.dropdown__item-button.btn-reset(type="button")!= item.text
+      else
+        block

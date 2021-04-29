@@ -1,0 +1,22 @@
+mixin button(props)
+  if props.isLink
+    a.button(class!= props.active ? "active" : "", class!= props.mod ? `button--${props.mod}` : "", class!= props.size ? `button--${props.size}` : "", class!= props.disabled ? "button--disabled" : "", class!= props.iconLeft ? "button--icon-left" : "", class!= props.cssClass, href= "#")&attributes(attributes)
+      if props.icon
+        span.button__icon
+          +icon(props.icon.name, props.icon && props.icon.width ? props.icon.width : 20, props.icon && props.icon.height ? props.icon.height : 20)
+      if props.text
+        span.button__text!= props.text
+  else if props.isDownloadLink
+    a.button.button--download(class!= props.active ? "active" : "", class!= props.mod ? `button--${props.mod}` : "", class!= props.size ? `button--${props.size}` : "", class!= props.disabled ? "button--disabled" : "", class!= props.iconLeft ? "button--icon-left" : "", class!= props.cssClass, href= "#", download="", target="_blank", aria-label="ссылка для скачивания")&attributes(attributes)
+      if props.icon
+        span.button__icon
+          +icon(props.icon.name, props.icon && props.icon.width ? props.icon.width : 20, props.icon && props.icon.height ? props.icon.height : 20)
+      if props.text
+        span.button__text!= props.text
+  else
+    button.button(class!= props.active ? "active" : "", class!= props.mod ? `button--${props.mod}` : "", class!= props.size ? `button--${props.size}` : "", class!= props.cssClass, type!= props.type ? props.type : "button", disabled= props.disabled ? true : false)&attributes(attributes)
+      if props.icon
+        span.button__icon
+          +icon(props.icon.name, props.icon && props.icon.width ? props.icon.width : 20, props.icon && props.icon.height ? props.icon.height : 20)
+      if props.text
+        span.button__text!= props.text

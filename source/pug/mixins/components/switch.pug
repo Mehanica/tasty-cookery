@@ -1,0 +1,11 @@
+mixin switch(props)
+  .switch(class!= props.mod ? `switch--${props.mod}` : "", class!= props.cssClass)&attributes(attributes)
+    label
+      if props.labelHidden
+        input(type!= props.type ? props.type : "checkbox", id=props.id, name=props.name, value=props.value, aria-label=props.value, checked=props.checked, disabled!= props.disabled, required)
+        span.switch__box
+      else
+        input(type!= props.type ? props.type : "checkbox", id=props.id, name=props.name, value=props.value, checked=props.checked, disabled!= props.disabled, required)
+        span.switch__box
+        if props.label
+          span.switch__label!= props.label

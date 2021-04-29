@@ -1,0 +1,11 @@
+mixin checkbox(props)
+  .checkbox(class!= props.cssClass)&attributes(attributes)
+    label
+      if props.labelHidden
+        input(type="checkbox", id=props.id, name=props.name, value=props.value, aria-label= props.label, checked=props.checked, disabled!= props.disabled, required)
+        span.checkbox__box
+      else
+        input(type="checkbox", id=props.id, name=props.name, value=props.value, checked=props.checked, disabled!= props.disabled, required)
+        span.checkbox__box
+        if props.label
+          span.checkbox__label!= props.label

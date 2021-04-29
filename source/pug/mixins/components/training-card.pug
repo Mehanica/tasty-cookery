@@ -1,0 +1,7 @@
+mixin training-card(props)
+  .training-card(class!= props.mod ? `training-card--${props.mod}` : "")&attributes(attributes)
+    h3.training-card__title!= props.title
+    if props.videoBtn
+      +button({isLink: true, mod: "ghost", iconLeft: true, size: "xxs", text: "Видео", icon: {name: "icon-play", width: 16, height: 16}})
+    if props.downloadBtn
+      +button({isDownloadLink: true, mod: "ghost", iconLeft: true, size: "xxs", text: "PDF", icon: {name: "icon-document", width: 16, height: 16}})

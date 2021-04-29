@@ -1,0 +1,63 @@
+//- extends ../base/layout
+
+//- block data
+//-   include ../data/filter-data
+
+//- block variables
+//-   - var title = "Блог | Fanler"
+//-   - var wrapperMod = ""
+//-   - var currentPage = "" //- для остальных страниц пишем либо пустую строку, либо индекс
+//-   - var tagsList = ["Футбол", "Тренды", "Конкурсы", "Конкурсы", "Эксперты о беттинге", "Хоккей", "Баскетбол", "Теннис", "Бои", "Теннис"]
+//- block main
+//-   main(style="padding: 20px 0")
+//-     .container
+//-       .grid
+//-         .grid__head
+//-           .grid__sort.tag-group.tag-group--mobile-column-2
+//-             ul.tag-group__list
+//-               li.tag-group__item.tablet-only
+//-                 +tag({cssClass: "active tag--transparent tag--align-left", label: "Фильтры", indicator: "12", icon: {name:"icon-filter", width: 16, height: 16}})
+//-               li.tag-group__item
+//-                 .dropdown
+//-                   +tag({cssClass: "tag--transparent tag--align-left dropdown__button tablet-only", label: "Сначала новые", icon: {name:"icon-sort", width: 16, height: 16}})
+//-                   button.dropdown__button.not-tablet(type="button")
+//-                     span Сначала новые
+//-                     span.dropdown__icon
+//-                       +icon("icon-chevron-down", 24, 24)
+//-                   .dropdown__content
+//-                     ul.dropdown__list
+//-                       li.dropdown__item
+//-                         button.dropdown__item-button(type="button") Сначала популярные
+//-                       li.dropdown__item
+//-                         button.dropdown__item-button.active(type="button") Сначала новые
+//-                       li.dropdown__item
+//-                         button.dropdown__item-button(type="button") Сначала старые
+//-           .tag-group.tag-group--scroll
+//-             ul.tag-group__list
+//-               each item in tagsList
+//-                 li.tag-group__item
+//-                   +tag({label: item, number: "21", icon: {hidden: true}})
+//-         .grid__content
+//-           .article-group
+//-             +article({mod: "big", title: "У «Зенита» появится новый спонсор. Эта компания ...", text: "Букмекерская компания «1хСтавка» вернула линии на иностранные спортивные...", commentsAmount: 12, viewsAmount: 158, date: "12  сентября 2020", image: {name: "blog-0", format: "jpg", alt: "Телефон"}, icon: {name: "icon-fire", width: 16, height: 16}, tag: "Футбол"})
+//-             +article({title: "У «Зенита» появится новый спонсор. Эта компания ...", text: "Букмекерская компания «1хСтавка» вернула линии на иностранные спортивные...", commentsAmount: 12, viewsAmount: 158, date: "12  сентября 2020", image: {name: "blog-0", format: "jpg", alt: "Телефон"}, icon: {name: "icon-fire", width: 16, height: 16}, tag: "Футбол"})
+//-             +article({title: "У «Зенита» появится новый спонсор. Эта компания ...", text: "Букмекерская компания «1хСтавка» вернула линии на иностранные спортивные...", commentsAmount: 12, viewsAmount: 158, date: "12  сентября 2020", image: {name: "blog-0", format: "jpg", alt: "Телефон"}, icon: {name: "icon-fire", width: 16, height: 16}, tag: "Футбол"})
+//-             +article({title: "У «Зенита» появится новый спонсор. Эта компания ...", text: "Букмекерская компания «1хСтавка» вернула линии на иностранные спортивные...", commentsAmount: 12, viewsAmount: 158, date: "12  сентября 2020", image: {name: "blog-0", format: "jpg", alt: "Телефон"}, icon: {name: "icon-fire", width: 16, height: 16}, tag: "Футбол"})
+//-             +article({title: "У «Зенита» появится новый спонсор. Эта компания ...", text: "Букмекерская компания «1хСтавка» вернула линии на иностранные спортивные...", commentsAmount: 12, viewsAmount: 158, date: "12  сентября 2020", image: {name: "blog-0", format: "jpg", alt: "Телефон"}, icon: {name: "icon-fire", width: 16, height: 16}, tag: "Футбол"})
+//-             +article({title: "У «Зенита» появится новый спонсор. Эта компания ...", text: "Букмекерская компания «1хСтавка» вернула линии на иностранные спортивные...", commentsAmount: 12, viewsAmount: 158, date: "12  сентября 2020", image: {name: "blog-0", format: "jpg", alt: "Телефон"}, icon: {name: "icon-fire", width: 16, height: 16}, tag: "Футбол"})
+//-           .article-group
+//-             +article({title: "У «Зенита» появится новый спонсор. Эта компания ...", text: "Букмекерская компания «1хСтавка» вернула линии на иностранные спортивные...", commentsAmount: 12, viewsAmount: 158, date: "12  сентября 2020", image: {name: "blog-0", format: "jpg", alt: "Телефон"}, icon: {name: "icon-fire", width: 16, height: 16}, tag: "Футбол"})
+//-             +article({mod: "big", title: "У «Зенита» появится новый спонсор. Эта компания ...", text: "Букмекерская компания «1хСтавка» вернула линии на иностранные спортивные...", commentsAmount: 12, viewsAmount: 158, date: "12  сентября 2020", image: {name: "blog-0", format: "jpg", alt: "Телефон"}, icon: {name: "icon-fire", width: 16, height: 16}, tag: "Футбол"})
+//-             +article({title: "У «Зенита» появится новый спонсор. Эта компания ...", text: "Букмекерская компания «1хСтавка» вернула линии на иностранные спортивные...", commentsAmount: 12, viewsAmount: 158, date: "12  сентября 2020", image: {name: "blog-0", format: "jpg", alt: "Телефон"}, icon: {name: "icon-fire", width: 16, height: 16}, tag: "Футбол"})
+//-             +article({title: "У «Зенита» появится новый спонсор. Эта компания ...", text: "Букмекерская компания «1хСтавка» вернула линии на иностранные спортивные...", commentsAmount: 12, viewsAmount: 158, date: "12  сентября 2020", image: {name: "blog-0", format: "jpg", alt: "Телефон"}, icon: {name: "icon-fire", width: 16, height: 16}, tag: "Футбол"})
+//-             +article({title: "У «Зенита» появится новый спонсор. Эта компания ...", text: "Букмекерская компания «1хСтавка» вернула линии на иностранные спортивные...", commentsAmount: 12, viewsAmount: 158, date: "12  сентября 2020", image: {name: "blog-0", format: "jpg", alt: "Телефон"}, icon: {name: "icon-fire", width: 16, height: 16}, tag: "Футбол"})
+//-             +article({title: "У «Зенита» появится новый спонсор. Эта компания ...", text: "Букмекерская компания «1хСтавка» вернула линии на иностранные спортивные...", commentsAmount: 12, viewsAmount: 158, date: "12  сентября 2020", image: {name: "blog-0", format: "jpg", alt: "Телефон"}, icon: {name: "icon-fire", width: 16, height: 16}, tag: "Футбол"})
+//-           +pagination({activeIndex: 1, data: [1, 2, 3, 4, "...", 156]})
+//-         .grid__aside
+//-           +filter({data: filterData})
+//-           .tag-group.tag-group--wrap
+//-             ul.tag-group__list
+//-               each item in tagsList
+//-                 li.tag-group__item
+//-                   +tag({label: item, number: "21", icon: {hidden: true}})
+//-           +banner({title: "Страховка первой ставки на сумму от 1 000 рублей от&nbsp;БК", money: "1000 ₽", image: {name: "banner-0", format: "jpg", alt: "Телефон"}})

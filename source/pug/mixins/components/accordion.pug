@@ -1,0 +1,8 @@
+mixin accordion(props)
+  .accordion(class!= props.active ? "active" : "", class!= props.cssClass)&attributes(attributes)
+    button.accordion__head(class!= props.head.class, type="button")
+      span!= props.head ? props.head.text : props.text
+      span.accordion__icon
+        +icon("icon-chevron-down", 24, 24)
+    .accordion__content
+      block

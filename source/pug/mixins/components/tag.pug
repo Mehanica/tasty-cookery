@@ -1,0 +1,11 @@
+mixin tag(props)
+  button.tag(class!= props.active ? "active" : "", class!= props.cssClass, type!= props.type ? props.type : "button")&attributes(attributes)
+    span.tag__text
+      span.tag__label!= props.label
+      |
+      |
+      span.tag__counter!= props.number
+    span.tag__icon(class!= props.icon.hidden ? "tag__icon--hidden" : "")
+      +icon(props.icon && props.icon.name ? props.icon.name : "icon-close", props.icon && props.icon.width ? props.icon.width : 16, props.icon && props.icon.height ? props.icon.height : 16)
+    if props.indicator
+      span.tag__indicator!= props.indicator

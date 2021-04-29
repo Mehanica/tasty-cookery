@@ -1,0 +1,8 @@
+mixin input-search(props)
+  .input.input--search(class= props.value ? "not-empty" : "", class!= props.cssClass)&attributes(attributes)
+    .input__icon
+      +icon("icon-search", 16, 16)
+    .input__wrapper
+        input(type="search", name= props.name, placeholder= props.placeholder, value= props.value, aria-label= props.label, aria-required= (props.required) ? "true" : false,  readonly= (props.readonly) ? true : false)&attributes(attributes)
+    button.input__clear.input__button(type="button" aria-label="Очистить строку поиска")
+      +icon("icon-clear", 16, 16)

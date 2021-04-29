@@ -1,0 +1,30 @@
+mixin filter(props)
+  aside.filter(class!= props.cssClass)&attributes(attributes)
+    .filter__body
+      .filter__top
+        h2.filter__title
+          span.filter__title-icon
+            +icon("icon-filter", 24, 24)
+          span.filter__title-text
+            | Фильтры
+            |
+            |
+            span.filter__title-counter 4
+        +button({cssClass: "filter__close", mod: "ghost", icon: {name: "icon-close", width: 24, height: 24}})
+      .filter__form
+        form(action="#" method="GET")
+          +tag({cssClass: "tag--align-left filter__reset", label: "Сбросить всё", type: "reset", icon: {width: 24, height: 24}})
+          each item, i in props.data
+            +accordion({cssClass: "filter__fieldset", head: {class: "filter__fieldset-title", text: item.title}, active: item.active})
+              .filter__fieldset-content.filter__group
+                if item.search
+                  +input-search({name: "input-search", placeholder: "Поиск...", labelHidden: true, label: "Поиск", required: true})
+                if item.reset
+                  +tag({cssClass: "tag--align-left tag--ghost", label: "Сбросить", icon: {width: 16, height: 16}})
+                if item.checkboxed
+                .filter__group
+                  each checkbox, j in item.checkboxes
+                    +checkbox({id: `checkbox-${i+1}-${j+1}`, name: `checkbox-${i+1}-${j+1}`, label: checkbox})
+                +link({text: "Показать всё", mod: "small"})
+          .filter__fieldset
+            +switch({mod: "align-right", cssClass: "filter__fieldset-title", id: "switch-1", name: "switch-1", label: "Мобильная версия"})

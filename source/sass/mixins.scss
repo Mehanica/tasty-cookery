@@ -1,0 +1,109 @@
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+// Desktop first
+
+@mixin viewport--xl {
+  @media (max-width: $viewport--xxl - 1) {
+    @content;
+  }
+}
+
+@mixin viewport--lg {
+  @media (max-width: $viewport--xl - 1) {
+    @content;
+  }
+}
+
+@mixin viewport--md {
+  @media (max-width: $viewport--lg - 1) {
+    @content;
+  }
+}
+
+@mixin viewport--sm {
+  @media (max-width: $viewport--md - 1) {
+    @content;
+  }
+}
+
+@mixin viewport--not-mobile {
+  @media (min-width: $viewport--md) {
+    @content;
+  }
+}
+
+@mixin viewport--not-tablet {
+  @media (min-width: $viewport--lg) {
+    @content;
+  }
+}
+
+// Mobile first
+
+/* @mixin viewport--md {
+  @media (min-width: $viewport--md) {
+    @content;
+  }
+}
+
+@mixin viewport--lg {
+  @media (min-width: $viewport--lg) {
+    @content;
+  }
+}
+
+@mixin viewport--xl {
+  @media (min-width: $viewport--xl) {
+    @content;
+  }
+}
+
+@mixin viewport--xxl {
+  @media (min-width: $viewport--xxl) {
+    @content;
+  }
+} */
+
+@mixin reset-btn {
+  padding: 0;
+  background-color: $color-transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+@mixin hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+
+  clip: rect(0 0 0 0);
+}
+
+@mixin h1 {
+  font-weight: 800;
+  font-size: 54px;
+  line-height: 56px;
+
+  @include viewport--sm {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+@mixin h2 {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 56px;
+
+  @include viewport--sm {
+    font-size: 30px;
+    line-height: 38px;
+  }
+}

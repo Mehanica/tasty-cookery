@@ -1,0 +1,15 @@
+mixin banner(props)
+  article.banner()&attributes(attributes)
+    .banner__image
+      +img("content", props.image.name, props.image.format, 280, 440, props.image.alt)
+    .banner__content
+      .banner__top
+        h3.banner__title!= props.title
+        b.banner__money!= props.money
+      .banner__bottom
+        span.banner__label.banner__hurry
+          span Успей получить
+        span.banner__label.banner__limited
+          +icon("icon-clock", 16, 16)
+          span Скоро закончится
+        +button({isLink: true, mod: "primary", size: "sm", text: "Получить бонус"})

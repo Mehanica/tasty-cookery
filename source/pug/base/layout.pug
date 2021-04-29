@@ -1,0 +1,33 @@
+include ../base/mixins
+include ../base/modal
+
+block data
+block variables
+
+doctype html
+html(lang="ru")
+  head
+    title= title
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="description", content="Описание")
+    //- генерируйте favicon тут - https://realfavicongenerator.net/
+    //- в подключение фавикон манифеста обязательно добавьте строчки crossorigin="use-credentials"
+
+    //- используйте только для шрифта находящегося на первом экране
+    link(rel="preload", href="fonts/circe-200.woff2", as="font", crossorigin="anonymous")
+    link(rel="preload", href="fonts/circe-400.woff2", as="font", crossorigin="anonymous")
+    link(rel="preload", href="fonts/circe-800.woff2", as="font", crossorigin="anonymous")
+    link(rel="stylesheet", href="css/style.min.css")
+
+  body
+    +sprite()
+    div(class=(wrapperMod) ? "wrapper wrapper--" + wrapperMod : "wrapper")
+
+      block main
+
+    block modals
+
+    script(src="js/vendor.min.js")
+    script(src="js/main.min.js")

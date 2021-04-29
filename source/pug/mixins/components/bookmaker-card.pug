@@ -1,0 +1,14 @@
+mixin bookmaker-card(props)
+  .bookmaker-card(class!= props.mod ? `bookmaker-card--${props.mod}` : "")&attributes(attributes)
+    span.bookmaker-card__rating!=props.rating
+    .bookmaker-card__logo
+      if props.image
+        +img("content/bookmaker-logo", props.image.name, props.image.format, 75, 24, props.image.alt)
+    if props.score
+      span.bookmaker-card__score
+        +icon("icon-star", 16, 16)
+        !=props.score
+    if props.bonus
+      span.bookmaker-card__bonus
+        +icon("icon-gift", 16, 16)
+        !=props.bonus

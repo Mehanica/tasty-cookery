@@ -1,0 +1,35 @@
+mixin forecast-card(props)
+  a.forecast-card(class!= props.mod ? `forecast-card--${props.mod}` : "" href="#")&attributes(attributes)
+    .forecast-card__author
+      .forecast-card__photo-wrap
+        if props.image
+          +img("content", props.image.name, props.image.format, 88, 88, props.image.alt)
+      .forecast-card__author-info
+        if props.authorName
+          span.forecast-card__author-name!= props.authorName
+        if props.authorLabel
+          span.forecast-card__author-label!= props.authorLabel
+        if props.tag
+          b.tag.tag--static!= props.tag
+
+    .forecast-card__content
+      h3.forecast-card__title!= props.title
+      .forecast-card__date-time-wrap
+        span.forecast-card__left-time
+          +icon("icon-clock", 16, 16)
+          !=props.leftTime
+        time.forecast-card__date-time(datetime= props.dateTimeTag)!= props.dateTime
+      ul.forecast-card__indicator-list
+        li.forecast-card__indicator-item.forecast-card__indicator-item--forecast Прогноз
+          b!=props.forecast
+        li.forecast-card__indicator-item.forecast-card__indicator-item--coefficient Кф
+          b!=props.coefficient
+        li.forecast-card__indicator-item.forecast-card__indicator-item--sum Сумма
+          b!=props.sum
+      if props.text
+        p.forecast-card__text!=props.text
+          span.forecast-card__read-more ... Читать полностью
+      if props.commentsAmount
+        span.forecast-card__comments
+          +icon("icon-comment", 16, 16)
+          span!= props.commentsAmount

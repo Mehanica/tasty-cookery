@@ -1,0 +1,62 @@
+// Colors
+//---------------------------------
+// https://www.htmlcsscolor.com/hex/334482
+
+// Default
+
+$color-black:                     #000000;
+$color-white:                     #ffffff;
+$color-transparent:               rgba(255, 255, 255, 0);
+
+// Base
+
+$color-nero:                      #242424;
+$color-suva-grey:                 #919191;
+$color-suva-grey-2:               #909090;
+$color-gainsboro:                 #dcdcdc;
+$color-whisper:                   #eaeaea;
+$color-mountain-meadow:           #13bc83;
+$color-fuego:                     #c0df2c;
+$color-golden-yellow:             #ffdd0c;
+
+
+// Gradient
+
+$mountain-meadow-to-fuego:                  linear-gradient(27deg, rgba(19,188,131,1) 0%, rgba(192,223,44,1) 96%);
+
+// Shadow
+
+$shadow-1:                         0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+
+// Border-radius
+
+$border-radius-sm:                  4px;
+$border-radius-md:                  8px;
+$border-radius-lg:                  14px;
+$border-radius-xl:                  18px;
+
+// Typography
+//---------------------------------
+
+$font-family--default:              "Circe", "Arial", sans-serif;
+
+// Animation
+//---------------------------------
+
+$transition:                        0.3s ease;
+$transition-modal:                  0.6s cubic-bezier(0.55, 0, 0.1, 1);
+
+// Viewports
+//---------------------------------
+
+$viewport--sm:                      320px;
+$viewport--md:                      768px;
+$viewport--lg:                      1024px;
+$viewport--xl:                      1440px;
+$viewport--xxl:                     1920px;
+
+// Retina
+//---------------------------------
+
+$retina-dpi:                        144dpi;
+$retina-dppx:                       1.5dppx;

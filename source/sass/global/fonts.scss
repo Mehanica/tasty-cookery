@@ -1,0 +1,32 @@
+@font-face {
+  font-style: normal;
+  font-weight: 200;
+  font-family: "Circe";
+
+  font-display: swap;
+  src:
+    url("../fonts/circe-200.woff2") format("woff2"),
+    url("../fonts/circe-200.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Circe";
+
+  font-display: swap;
+  src:
+    url("../fonts/circe-400.woff2") format("woff2"),
+    url("../fonts/circe-400.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 800;
+  font-family: "Circe";
+
+  font-display: swap;
+  src:
+    url("../fonts/circe-800.woff2") format("woff2"),
+    url("../fonts/circe-800.woff") format("woff");
+}
